@@ -9,6 +9,7 @@ $ npm install sqlobj
 
 ## Usage
 
+SELECT
 ```js
 var sqlobj = require('sqlobj');
 var options = {
@@ -25,6 +26,47 @@ var sql = sqlobj(options);
 
 console.log(sql);
 // SELECT * FROM user WHERE `id` > '10' AND `comment` >= '5' ORDER BY id DESC LIMIT 10, 10
+```
+INSERT INTO
+```js
+var sqlobj = require('sqlobj');
+var options = {
+    insert: 'user',
+    set: [{
+        'id': 1,
+        'user': '111',
+        'article': '123'
+    }, {
+        'id': 2,
+        'user': '223',
+        'article': '333'
+    }, {
+        'id': 3,
+        'user': '222',
+        'article': '444'
+    }]
+};
+var sql = sqlobj(options);
+
+console.log(sql);
+// INSERT INTO user (`id`, `user`, `article`) VALUES ('1', '111', '123'), ('2', '223', '333'), ('3', '222', '444')
+```
+UPDATE
+```js
+var options = {
+    UPDATE: 'user',
+    SET: {
+        'user': 'dddd',
+        'article': '123'
+    },
+    where: {
+        'id': 1
+    }
+};
+var sql = sqlobj(options);
+
+console.log(sql);
+// UPDATE user SET `user` = 'dddd', `article` = '123' WHERE `id` = '1'
 ```
 
 ## License
