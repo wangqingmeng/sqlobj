@@ -1,0 +1,26 @@
+{
+  "name": "sqlobj",
+  "version": "1.0.0",
+  "description": "A JavaScript utility used to build SQL strings via an Object",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangqingmeng"
+  },
+  "keywords": [
+    "sqlobj",
+    "mysql",
+    "sql"
+  ],
+  "author": "wangqingmeng",
+  "license": "MIT",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  }
+}
