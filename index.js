@@ -69,13 +69,19 @@ function sqlobj (options) {
         res += sqlobj.set(options.set);
     };
     if (hasOwnProperty.call(options, 'where')) {
-        res += ' WHERE' + sqlobj.where(options.where);
+        if (!_.isEmpty(options.where)){
+            res += ' WHERE' + sqlobj.where(options.where);
+        }
     };
     if (hasOwnProperty.call(options, 'groupby')) {
-        res += ' GROUP BY' + sqlobj.groupBy(options.groupby);
+        if (!_.isEmpty(options.groupby)){
+            res += ' GROUP BY' + sqlobj.groupBy(options.groupby);
+        }
     };
     if (hasOwnProperty.call(options, 'orderby')) {
-        res += ' ORDER BY' + sqlobj.orderBy(options.orderby);
+        if (!_.isEmpty(options.orderby)){
+            res += ' ORDER BY' + sqlobj.orderBy(options.orderby);
+        }
     };
     if (hasOwnProperty.call(options, 'limit')) {
         res += ' LIMIT' + sqlobj.limit(options.limit);
