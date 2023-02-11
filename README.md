@@ -17,7 +17,7 @@ var options = {
     from: 'user',
     where: {
         'id >': 10,
-        'comment >=': 5
+        'comments >=': 5
     },
     orderby: 'id DESC',
     limit: [10, 10]
@@ -25,7 +25,7 @@ var options = {
 var sql = sqlobj(options);
 
 console.log(sql);
-// SELECT * FROM user WHERE `id` > '10' AND `comment` >= '5' ORDER BY id DESC LIMIT 10, 10
+// SELECT * FROM user WHERE `id` > '10' AND `comments` >= '5' ORDER BY id DESC LIMIT 10, 10
 ```
 INSERT INTO
 ```js
